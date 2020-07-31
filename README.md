@@ -14,3 +14,5 @@ To install this
         
     
 3) run python manage.py runserver
+
+4) Go to http://127.0.0.1:8000/accounts/register/ to access the site
