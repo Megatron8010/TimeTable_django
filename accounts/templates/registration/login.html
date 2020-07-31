@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="bottom">
+        <div class="center">
+          <h2>Welcome, Login</h2>
+          <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
+            <div>
+              {{ field.label_tag }}
+            </div>
+            <div class="input">
+              {{ field }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn">Login</button>
+          </form>
+            {% if form.errors %}
+    <p style="color: red;">username or password not correct</p>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

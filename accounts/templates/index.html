@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <head>
+        <title> Auth</title>
+    </head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="bottom">
+        <div class="center">
+    {% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
